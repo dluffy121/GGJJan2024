@@ -67,3 +67,6 @@ crashlytics-build.properties
 
 # Package
 packages-lock.json
+
+# layout files
+*.dwlt
