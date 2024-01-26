@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelsData:
   - numberOfLives: 5
-    requiredScoreToWin: 500
-    listOfSpawners: 000000000100000002000000
-  - numberOfLives: 6
-    requiredScoreToWin: 1000
-    listOfSpawners: 0400000003000000
+    requiredScoreToWin: 1500
+    listOfSpawners: 0300000004000000
   - numberOfLives: 5
-    requiredScoreToWin: 1000
-    listOfSpawners: 00000000010000000200000003000000
+    requiredScoreToWin: 5000
+    listOfSpawners: 040000000300000001000000
   - numberOfLives: 4
-    requiredScoreToWin: 1200
-    listOfSpawners: 010000000300000004000000
+    requiredScoreToWin: 7500
+    listOfSpawners: 03000000040000000100000000000000
   - numberOfLives: 4
-    requiredScoreToWin: 1200
-    listOfSpawners: 0300000002000000
+    requiredScoreToWin: 10000
+    listOfSpawners: 01000000030000000400000002000000
+  - numberOfLives: 3
+    requiredScoreToWin: 15000
+    listOfSpawners: 0300000004000000010000000200000000000000
