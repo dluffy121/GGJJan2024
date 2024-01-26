@@ -35,4 +35,16 @@ public class GameManager : MonoBehaviour
 
         m_asyncOperation = null;
     }
+
+    public void PauseTheGame(bool a_isPaused)
+    {
+        if(a_isPaused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
 }

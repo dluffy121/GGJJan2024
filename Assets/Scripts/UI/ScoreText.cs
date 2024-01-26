@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class ScoreText : MonoBehaviour
 {
+    [SerializeField]
     private Text m_scoreText;
     // Start is called before the first frame update
     void Start()
     {
-        m_scoreText = gameObject.GetComponent<Text>();
+        //m_scoreText = gameObject.GetComponent<Text>();
         m_scoreText.text = string.Format("Score : {0}",0);
     }
 
