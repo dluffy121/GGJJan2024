@@ -21,6 +21,12 @@ public class GameEvents : MonoBehaviour
     public delegate void LiveLost(int a_LivesLeft);
     public static LiveLost OnLiveLost;
 
+    public delegate void PlayerStun();
+    public static PlayerStun OnPlayerStun;
+
+    public delegate void UpdateSpawners();
+    public static UpdateSpawners updateSpawners;
+
     private void Awake()
     {
         s_instance = this;

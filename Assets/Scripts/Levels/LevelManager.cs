@@ -24,6 +24,9 @@ public class LevelManager : MonoBehaviour
     static LevelManager s_instance = null;
     public static LevelManager Instance => s_instance;
 
+    public static LevelDataScriptable DataForLevels { get { return Instance.m_dataForLevels; } }
+    public static int LevelToLoad {  get { return Instance.m_levelToLoad; } }
+
     private void Awake()
     {
         s_instance = this;
@@ -84,6 +87,7 @@ public class LevelManager : MonoBehaviour
         m_setScore = 0;
         m_levelScore = m_dataForLevels.levelsData[a_levelNo].requiredScoreToWin;
         m_livesLeft = m_dataForLevels.levelsData[a_levelNo].numberOfLives;
+        GameEvents.updateSpawners?.Invoke();
         GameEvents.OnScoreUpdated?.Invoke(m_setScore);
         GameEvents.OnLiveLost?.Invoke(m_livesLeft);
         GameManager.Instance.PauseTheGame(false);

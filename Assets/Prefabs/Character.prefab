@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5876511970171359608}
   m_Layer: 0
   m_Name: Arm_Right
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_rightKeyCode: 100
   m_leftKeyCode: 97
   m_isLeftCharacter: 0
+  m_playerStunTime: 1
 --- !u!1 &1940050115621046684
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +272,7 @@ GameObject:
   - component: {fileID: 7955595897652563641}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,7 +464,7 @@ GameObject:
   - component: {fileID: 6297079375922351144}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -876,7 +877,7 @@ GameObject:
   - component: {fileID: 266629954606819508}
   m_Layer: 0
   m_Name: Arm_Left
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1060,7 +1061,7 @@ GameObject:
   - component: {fileID: 4202850481733383129}
   m_Layer: 0
   m_Name: RightHand
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1181,7 +1182,7 @@ GameObject:
   - component: {fileID: 4907332627774179375}
   m_Layer: 0
   m_Name: LeftHand
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1466,7 +1467,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.55}
-  m_ConnectedAnchor: {x: 0, y: -0.49076712}
+  m_ConnectedAnchor: {x: 0, y: -0.49076703}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1553,7 +1554,7 @@ GameObject:
   - component: {fileID: 2863275470842481852}
   m_Layer: 0
   m_Name: Arms
-  m_TagString: Player
+  m_TagString: Thela
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

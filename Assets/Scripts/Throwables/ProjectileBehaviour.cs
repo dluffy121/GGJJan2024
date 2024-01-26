@@ -5,6 +5,8 @@ using UnityEngine;
 public class ProjectileBehaviour : MonoBehaviour
 {
     [SerializeField]
+    EProjectileType m_projectileType;
+    [SerializeField]
     float m_projectileSpeed;
     [SerializeField]
     float m_rotationSpeed;
@@ -39,13 +41,18 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if (collider.transform.CompareTag("Platform"))
         {
-            GameEvents.OnDropProjectile?.Invoke();
+            if(!m_projectileType.Equals(EProjectileType.Obstacle))
+                GameEvents.OnDropProjectile?.Invoke();
             Destroy(this.gameObject);
         }
         else if (collider.transform.CompareTag("Thela"))
         {
             GameEvents.updateScore?.Invoke(m_projectileScore);
             Destroy(this.gameObject);
+        }
+        else if(collider.transform.CompareTag("Player"))
+        {
+            GameEvents.OnPlayerStun?.Invoke();
         }
     }
 }
