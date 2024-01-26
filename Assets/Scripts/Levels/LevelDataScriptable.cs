@@ -13,4 +13,5 @@ public class RequiredDataForLevel
 {
     public int numberOfLives;
     public int requiredScoreToWin;
+    public int[] listOfSpawners;
 }

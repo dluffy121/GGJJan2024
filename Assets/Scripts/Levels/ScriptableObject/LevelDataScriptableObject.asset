@@ -15,9 +15,16 @@ MonoBehaviour:
   levelsData:
   - numberOfLives: 5
     requiredScoreToWin: 500
+    listOfSpawners: 000000000100000002000000
   - numberOfLives: 6
     requiredScoreToWin: 1000
+    listOfSpawners: 0400000003000000
   - numberOfLives: 5
     requiredScoreToWin: 1000
+    listOfSpawners: 00000000010000000200000003000000
   - numberOfLives: 4
     requiredScoreToWin: 1200
+    listOfSpawners: 010000000300000004000000
+  - numberOfLives: 4
+    requiredScoreToWin: 1200
+    listOfSpawners: 0300000002000000

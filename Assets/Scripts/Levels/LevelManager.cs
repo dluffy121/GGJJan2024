@@ -72,6 +72,14 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < m_projectilesSpawnerRefrenceList.Length; i++)
         {
             m_projectilesSpawnerRefrenceList[i].ClearTheProjectilesInLevel();
+            m_projectilesSpawnerRefrenceList[i].gameObject.SetActive(false);
+        }
+
+        int l_iterations = m_dataForLevels.levelsData[a_levelNo].listOfSpawners.Length;
+        for(int i = 0; i < l_iterations; i++)
+        {
+            m_projectilesSpawnerRefrenceList
+                [m_dataForLevels.levelsData[a_levelNo].listOfSpawners[i]].gameObject.SetActive(true);
         }
         m_setScore = 0;
         m_levelScore = m_dataForLevels.levelsData[a_levelNo].requiredScoreToWin;
