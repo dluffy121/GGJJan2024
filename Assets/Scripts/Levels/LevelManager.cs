@@ -13,6 +13,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     LevelDataScriptable m_dataForLevels;
 
+    [SerializeField]
+    Spawner[] m_projectilesSpawnerRefrenceList;
+
+    [SerializeField]
+    GameSceneManager m_gameSceneManagerRefrence;
+
     int m_levelToLoad = 0;
 
     static LevelManager s_instance = null;
@@ -44,6 +50,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("!! Level Completed !!");
             GamePlayUICanvas.SetLevelCompletePanelVisibility(true);
+            GameManager.Instance.PauseTheGame(true);
         }
         GameEvents.OnScoreUpdated?.Invoke(m_setScore);
     }
@@ -55,17 +62,23 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log(":( Level Failed");
             GamePlayUICanvas.SetLevelFailedPanelVisibility(true);
+            GameManager.Instance.PauseTheGame(true);
         }
         GameEvents.OnLiveLost?.Invoke(m_livesLeft);
     }
 
     private void LoadLevel(int a_levelNo)
     {
+        for (int i = 0; i < m_projectilesSpawnerRefrenceList.Length; i++)
+        {
+            m_projectilesSpawnerRefrenceList[i].ClearTheProjectilesInLevel();
+        }
         m_setScore = 0;
         m_levelScore = m_dataForLevels.levelsData[a_levelNo].requiredScoreToWin;
         m_livesLeft = m_dataForLevels.levelsData[a_levelNo].numberOfLives;
         GameEvents.OnScoreUpdated?.Invoke(m_setScore);
         GameEvents.OnLiveLost?.Invoke(m_livesLeft);
+        GameManager.Instance.PauseTheGame(false);
     }
 
     public void LoadNextLevel()
@@ -78,7 +91,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            //load main menu
+            GameManager.Instance.PauseTheGame(false);
+            m_gameSceneManagerRefrence.LoadMainScene();
         }
     }
 

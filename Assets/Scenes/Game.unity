@@ -1121,6 +1121,11 @@ MonoBehaviour:
   m_levelScore: 10000
   m_livesLeft: 5
   m_dataForLevels: {fileID: 11400000, guid: 5e2f69c156d2c4548a0a3818cbcb3abe, type: 2}
+  m_projectilesSpawnerRefrenceList:
+  - {fileID: 1849928940}
+  - {fileID: 1707204257}
+  - {fileID: 215613186}
+  m_gameSceneManagerRefrence: {fileID: 883078774}
 --- !u!1 &1084757145
 GameObject:
   m_ObjectHideFlags: 0

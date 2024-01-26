@@ -15,6 +15,8 @@ public class Spawner : MonoBehaviour
 
     private float m_timeLeftToSpawn;
 
+    List<ProjectileBehaviour> spawnedProjectileBehaviours = new List<ProjectileBehaviour>();
+
     private void Start()
     {
         m_timeLeftToSpawn = m_spawnTime;
@@ -31,8 +33,22 @@ public class Spawner : MonoBehaviour
             {
                 projectileBehaviour.MaxAngle = m_maxAngle;
                 projectileBehaviour.MinAngle = m_minAngle;
+                spawnedProjectileBehaviours.Add(projectileBehaviour);
             }
             m_timeLeftToSpawn = m_spawnTime;
         }
+    }
+
+    public void ClearTheProjectilesInLevel()
+    {
+        for(int i = 0; i < spawnedProjectileBehaviours.Count; i++)
+        {
+            if(spawnedProjectileBehaviours[i] != null)
+            {
+                Destroy(spawnedProjectileBehaviours[i].gameObject);
+            }
+        }
+
+        spawnedProjectileBehaviours.Clear();
     }
 }
