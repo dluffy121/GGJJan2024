@@ -17,6 +17,11 @@ public class DialogWriter : MonoBehaviour
     int m_maxLengthOfDialog = 30;
     [SerializeField]
     float m_waitToWriteNextLetter = 0.1f;
+    [SerializeField]
+    AudioClip m_typeWriterClip;
+
+    [SerializeField]
+    GameObject InstructionsPanel;
 
     int m_indexOfDialogToWrite = 0;
     StringBuilder m_stringBuilder;
@@ -35,12 +40,20 @@ public class DialogWriter : MonoBehaviour
     public void WriteTheNextDialog()
     {
         SoundManager.Instance.PlayClickSound();
-        isWriting = true;
-        currentTime = 0;
-        m_indexOfLetterToWrite = 0;
-        m_currentDialogToWrite = m_dialogsScritableObjectRef.m_dialogsToWrite[m_indexOfDialogToWrite];
-        m_lengthOfADialog = m_currentDialogToWrite.Length;
-        m_nextDialogButton.interactable = false;
+        if (m_indexOfDialogToWrite >= m_dialogsScritableObjectRef.m_dialogsToWrite.Length)
+        {
+            //sound of glass breaking
+            InstructionsPanel.gameObject.SetActive(true);
+        }
+        else
+        {
+            isWriting = true;
+            currentTime = 0;
+            m_indexOfLetterToWrite = 0;
+            m_currentDialogToWrite = m_dialogsScritableObjectRef.m_dialogsToWrite[m_indexOfDialogToWrite];
+            m_lengthOfADialog = m_currentDialogToWrite.Length;
+            m_nextDialogButton.interactable = false;
+        }
     }
 
     private void OnDialogGotWritten()
@@ -50,12 +63,6 @@ public class DialogWriter : MonoBehaviour
         m_indexOfDialogToWrite++;
         m_nextDialogButton.interactable = true;
         m_stringBuilder.Clear();
-
-        if(m_indexOfDialogToWrite >= m_dialogsScritableObjectRef.m_dialogsToWrite.Length)
-        {
-            //sound of glass breaking
-            _ = GameManager.Instance.LoadScene(2);
-        }
     }
 
     private void WriteTheDialogText()
@@ -63,6 +70,7 @@ public class DialogWriter : MonoBehaviour
         m_stringBuilder.Append(m_currentDialogToWrite[m_indexOfLetterToWrite]);
         m_indexOfLetterToWrite++;
         m_dialogTetx.text = m_stringBuilder.ToString();
+        SoundManager.PlaySoundEffect(m_typeWriterClip);
     }
 
     private void ForceWriteTheWholeDialog()
@@ -92,5 +100,10 @@ public class DialogWriter : MonoBehaviour
         {
             ForceWriteTheWholeDialog();
         }
+    }
+
+    public void LoadGamePlayScene()
+    {
+        _ = GameManager.Instance.LoadScene(2);
     }
 }
