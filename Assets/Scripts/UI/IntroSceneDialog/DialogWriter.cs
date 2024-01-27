@@ -34,6 +34,7 @@ public class DialogWriter : MonoBehaviour
 
     public void WriteTheNextDialog()
     {
+        SoundManager.Instance.PlayClickSound();
         isWriting = true;
         currentTime = 0;
         m_indexOfLetterToWrite = 0;
