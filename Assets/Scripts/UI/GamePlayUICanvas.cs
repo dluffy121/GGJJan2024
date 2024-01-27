@@ -5,7 +5,7 @@ using UnityEngine;
 public class GamePlayUICanvas : MonoBehaviour
 {
     [SerializeField]
-    RectTransform LevelCompletePanel, LevelFailedPanel;
+    RectTransform LevelCompletePanel, LevelFailedPanel, GameCompletePanel;
 
     private static GamePlayUICanvas m_instance;
 
@@ -16,12 +16,14 @@ public class GamePlayUICanvas : MonoBehaviour
 
     public void OnLoadNextLevelPressed()
     {
+        SoundManager.Instance.PlayClickSound();
         LevelManager.Instance.LoadNextLevel();
         SetLevelCompletePanelVisibility(false);
     }
 
     public void OnReloadLevelPressed()
     {
+        SoundManager.Instance.PlayClickSound();
         LevelManager.Instance.ReloadLevel();
         SetLevelFailedPanelVisibility(false);
     }
@@ -34,5 +36,10 @@ public class GamePlayUICanvas : MonoBehaviour
     public static void SetLevelFailedPanelVisibility(bool a_visibility)
     {
         m_instance.LevelFailedPanel.gameObject.SetActive(a_visibility);
+    }
+
+    public static void SetGameWinPanelVisibility(bool a_visibility)
+    {
+        m_instance.GameCompletePanel.gameObject.SetActive(a_visibility);
     }
 }
