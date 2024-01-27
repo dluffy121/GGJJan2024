@@ -56,7 +56,7 @@ public class ProjectileBehaviour : MonoBehaviour
         else if (collider.transform.CompareTag("Thela"))
         {
             GameEvents.updateScore?.Invoke(m_projectileScore);
-            DestroyImmediate(this.gameObject);
+            Destroy(this.gameObject);
         }
         else if(collider.transform.CompareTag("Player"))
         {
