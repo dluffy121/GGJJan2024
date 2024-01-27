@@ -21,13 +21,13 @@ public class Spawner : MonoBehaviour
 
     List<ProjectileBehaviour> spawnedProjectileBehaviours = new List<ProjectileBehaviour>();
 
-    private void Start()
+    private void OnEnable()
     {
         m_timeLeftToSpawn = m_spawnTime;
         GameEvents.updateSpawners += CallbackToUpdateSpawners;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         GameEvents.updateSpawners -= CallbackToUpdateSpawners;
     }

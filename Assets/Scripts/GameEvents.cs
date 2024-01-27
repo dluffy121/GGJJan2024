@@ -23,7 +23,7 @@ public class GameEvents : MonoBehaviour
     public static LiveLost OnLiveLost;
     public static LiveLost OnTotalLivesUpdated;
 
-    public delegate void PlayerStun();
+    public delegate void PlayerStun(string a_name);
     public static PlayerStun OnPlayerStun;
 
     public delegate void UpdateSpawners();

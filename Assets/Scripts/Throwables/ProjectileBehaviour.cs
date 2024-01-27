@@ -54,13 +54,14 @@ public class ProjectileBehaviour : MonoBehaviour
             Destroy(this.gameObject);
         }
         else if (collider.transform.CompareTag("Thela"))
-        {
+        {         
             GameEvents.updateScore?.Invoke(m_projectileScore);
+            gameObject.GetComponent<Collider2D>().enabled = false;
             Destroy(this.gameObject);
         }
         else if(collider.transform.CompareTag("Player"))
         {
-            GameEvents.OnPlayerStun?.Invoke();
+            GameEvents.OnPlayerStun?.Invoke(collider.transform.parent.name);
         }
     }
 }

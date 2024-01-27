@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private bool m_isLeftCharacter;
     [SerializeField]
     private float m_playerStunTime;
+    [SerializeField]
+    private GameObject m_playerStun;
+    [SerializeField]
+    private Animator m_StunAnim;
 
     private bool m_isPlayerStun;
 
@@ -34,15 +38,21 @@ public class PlayerController : MonoBehaviour
         GameEvents.OnPlayerStun -= CallbackOnPlayerStun;
     }
 
-    private void CallbackOnPlayerStun()
+    private void CallbackOnPlayerStun(string a_name)
     {
-        m_isPlayerStun = true;
-        StartCoroutine(IEWaitToReActivatePlayerControls());
+        if (a_name.Equals(gameObject.name))
+        {
+            m_isPlayerStun = true;
+            m_playerStun.SetActive(true);
+            m_StunAnim.Play("Stun");
+            StartCoroutine(IEWaitToReActivatePlayerControls());
+        }
     }
 
     IEnumerator IEWaitToReActivatePlayerControls()
     {
         yield return new WaitForSeconds(m_playerStunTime);
+        m_playerStun.SetActive(false);
         m_isPlayerStun = false;
     }
 
@@ -69,7 +79,5 @@ public class PlayerController : MonoBehaviour
             else
                 m_anim.Play("Idle");
         }
-        else
-            m_anim.Play("Idle");
     }
 }
