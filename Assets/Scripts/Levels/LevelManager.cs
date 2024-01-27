@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class LevelManager : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField]
     GameSceneManager m_gameSceneManagerRefrence;
-
+    [SerializeField]
+    AudioClip levelPassSound, levelFailedSound;
     int m_levelToLoad = 0;
 
     static LevelManager s_instance = null;
@@ -52,6 +54,7 @@ public class LevelManager : MonoBehaviour
         if (m_setScore >= m_levelScore)
         {
             Debug.Log("!! Level Completed !!");
+            SoundManager.PlaySoundEffect(levelPassSound);
             GamePlayUICanvas.SetLevelCompletePanelVisibility(true);
             GameManager.Instance.PauseTheGame(true);
         }
@@ -64,6 +67,7 @@ public class LevelManager : MonoBehaviour
         if (m_livesLeft <= 0)
         {
             Debug.Log(":( Level Failed");
+            SoundManager.PlaySoundEffect(levelFailedSound);
             GamePlayUICanvas.SetLevelFailedPanelVisibility(true);
             GameManager.Instance.PauseTheGame(true);
         }
@@ -114,5 +118,13 @@ public class LevelManager : MonoBehaviour
     public void ReloadLevel()
     {
         LoadLevel(m_levelToLoad);
+    }
+
+    private async Task PlayPoliceVisuals()
+    {
+        //while()
+        //{
+
+        //}
     }
 }

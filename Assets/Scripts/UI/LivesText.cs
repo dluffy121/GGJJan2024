@@ -13,6 +13,8 @@ public class LivesText : MonoBehaviour
     float m_waitbeforeSwapingSprite = 0.1f;
     [SerializeField]
     Sprite redSirenSprite, blueSirenSprite;
+    [SerializeField]
+    AudioClip sirenEffectSound;
 
     int m_livesLost;
     List<Image> m_spawnedSirenImages = new List<Image>();
@@ -69,6 +71,7 @@ public class LivesText : MonoBehaviour
 
     public IEnumerator SirenAnimation()
     {
+        SoundManager.PlaySoundEffect(sirenEffectSound);
         for(int i = 0; i < 10; i++)
         {
             m_spawnedSirenImages[m_livesLost].sprite = redSirenSprite;
