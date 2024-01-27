@@ -9,4 +9,9 @@ public class MainSceneManager : MonoBehaviour
     {
         _ = GameManager.Instance.LoadScene(m_gameSceneIndex);
     }
+
+    public void PlayClickSound()
+    {
+        SoundManager.Instance.PlayClickSound();
+    }
 }

@@ -105,8 +105,9 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.PauseTheGame(false);
-            m_gameSceneManagerRefrence.LoadMainScene();
+            GameManager.Instance.PauseTheGame(true);
+            //m_gameSceneManagerRefrence.LoadMainScene();
+            GamePlayUICanvas.SetGameWinPanelVisibility(true);
         }
     }
 

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LivesText : MonoBehaviour
 {
-    [SerializeField]
-    private Text m_livesText;
+    //[SerializeField]
+    //private Text m_livesText;
     [SerializeField]
     Image sirenToShow;
     [SerializeField]
