@@ -89,7 +89,9 @@ public class LevelManager : MonoBehaviour
         m_livesLeft = m_dataForLevels.levelsData[a_levelNo].numberOfLives;
         GameEvents.updateSpawners?.Invoke();
         GameEvents.OnScoreUpdated?.Invoke(m_setScore);
-        GameEvents.OnLiveLost?.Invoke(m_livesLeft);
+        //GameEvents.OnLiveLost?.Invoke(m_livesLeft);
+        GameEvents.OnTotalLivesUpdated?.Invoke(m_livesLeft);
+        GameEvents.OnRequiredLevelScoreChanged?.Invoke(m_levelScore);
         GameManager.Instance.PauseTheGame(false);
     }
 

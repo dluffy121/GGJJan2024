@@ -14,6 +14,8 @@ public class ProjectileBehaviour : MonoBehaviour
     Vector3 m_throwDirection;
     [SerializeField]
     int m_projectileScore;
+    [SerializeField]
+    Rigidbody2D m_projectileRigidbody;
 
 
     private float m_randomProjectile;
@@ -26,15 +28,21 @@ public class ProjectileBehaviour : MonoBehaviour
     void Start()
     {
         m_randomProjectile = Random.Range(MinAngle, MaxAngle);
+        AddStartingForce();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(m_randomProjectile, m_throwDirection.y, 0) * m_projectileSpeed * Time.deltaTime;
+        //transform.position += new Vector3(m_randomProjectile, m_throwDirection.y, 0) * m_projectileSpeed * Time.deltaTime;
         Vector3 l_rotation = transform.localEulerAngles;
         l_rotation.z += Time.deltaTime * m_rotationSpeed;
         transform.localEulerAngles = l_rotation;
+    }
+
+    private void AddStartingForce()
+    {
+        m_projectileRigidbody.AddForce(new Vector2(m_randomProjectile, m_throwDirection.y) * m_projectileSpeed, ForceMode2D.Impulse);
     }
 
     private void OnCollisionEnter2D(Collision2D collider)
