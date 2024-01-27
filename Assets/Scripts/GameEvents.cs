@@ -14,12 +14,14 @@ public class GameEvents : MonoBehaviour
 
     public delegate void ScoreUpdated(int a_Score);
     public static ScoreUpdated OnScoreUpdated;
+    public static ScoreUpdated OnRequiredLevelScoreChanged;
 
     public delegate void DropProjectile();
     public static DropProjectile OnDropProjectile;
 
     public delegate void LiveLost(int a_LivesLeft);
     public static LiveLost OnLiveLost;
+    public static LiveLost OnTotalLivesUpdated;
 
     public delegate void PlayerStun();
     public static PlayerStun OnPlayerStun;
