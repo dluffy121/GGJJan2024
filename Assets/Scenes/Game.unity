@@ -1309,6 +1309,8 @@ MonoBehaviour:
   - {fileID: 1292591438}
   - {fileID: 817533749}
   m_gameSceneManagerRefrence: {fileID: 883078774}
+  levelPassSound: {fileID: 8300000, guid: 3328bed67f7c4294e99c0303de82ff35, type: 3}
+  levelFailedSound: {fileID: 8300000, guid: f3f8857bf2220db41b83259685628025, type: 3}
 --- !u!1 &1084757145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3148,6 +3150,7 @@ MonoBehaviour:
   m_waitbeforeSwapingSprite: 0.1
   redSirenSprite: {fileID: 21300000, guid: 560d72a3f00bb9742bdbcb09809e7fc5, type: 3}
   blueSirenSprite: {fileID: 21300000, guid: 3c6358f6d51a9b44c8283680da41967c, type: 3}
+  sirenEffectSound: {fileID: 8300000, guid: d1aceb42b19ed7e4b9e7210f30e5a918, type: 3}
 --- !u!114 &1992676311
 MonoBehaviour:
   m_ObjectHideFlags: 0
