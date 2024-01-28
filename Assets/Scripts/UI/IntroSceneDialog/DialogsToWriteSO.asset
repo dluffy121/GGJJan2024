@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: DialogsToWriteSO
   m_EditorClassIdentifier: 
   m_dialogsToWrite:
-  - Hello, How are you?
-  - Hi, I am Good, How are you?
-  - I am Good Too.
+  - 'Husband : Do you know the meaning of WIFE? '
+  - 'It means, Without Information, Fighting Everytime. '
+  - 'Wife : No Darling, It means'
+  - With Idiot For Ever
+  - And now the fight begins

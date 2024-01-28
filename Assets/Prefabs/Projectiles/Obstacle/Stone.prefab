@@ -177,3 +177,4 @@ MonoBehaviour:
   m_throwDirection: {x: 0, y: -1, z: 0}
   m_projectileScore: -200
   m_projectileRigidbody: {fileID: 324997659118521844}
+  m_moneyCollect: {fileID: 8300000, guid: 4025f265134aaf9459302a5f2940504f, type: 3}

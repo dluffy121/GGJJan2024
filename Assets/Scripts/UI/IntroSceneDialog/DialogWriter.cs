@@ -18,7 +18,7 @@ public class DialogWriter : MonoBehaviour
     [SerializeField]
     float m_waitToWriteNextLetter = 0.1f;
     [SerializeField]
-    AudioClip m_typeWriterClip;
+    AudioClip m_typeWriterClip, m_glassBreakSound;
 
     [SerializeField]
     GameObject InstructionsPanel;
@@ -43,6 +43,7 @@ public class DialogWriter : MonoBehaviour
         if (m_indexOfDialogToWrite >= m_dialogsScritableObjectRef.m_dialogsToWrite.Length)
         {
             //sound of glass breaking
+            SoundManager.PlaySoundEffect(m_glassBreakSound);
             InstructionsPanel.gameObject.SetActive(true);
         }
         else

@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private GameObject m_playerStun;
     [SerializeField]
     private Animator m_StunAnim;
+    [SerializeField]
+    private Transform m_light;
 
     private bool m_isPlayerStun;
 
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        m_light.position = new Vector3(m_Rigidbody.gameObject.transform.position.x, m_light.position.y, m_light.position.z);
         if (!m_isPlayerStun)
         {
             if (Input.GetKey(m_rightKeyCode))

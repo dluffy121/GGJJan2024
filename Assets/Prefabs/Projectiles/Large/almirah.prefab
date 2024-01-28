@@ -105,6 +105,7 @@ MonoBehaviour:
   m_throwDirection: {x: 0, y: -1, z: 0}
   m_projectileScore: 800
   m_projectileRigidbody: {fileID: 1271978683258022554}
+  m_moneyCollect: {fileID: 8300000, guid: 7d2dc3c47538bb74da329e22cbebe3cc, type: 3}
 --- !u!50 &1271978683258022554
 Rigidbody2D:
   serializedVersion: 4

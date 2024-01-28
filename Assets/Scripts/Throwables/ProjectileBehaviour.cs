@@ -16,6 +16,8 @@ public class ProjectileBehaviour : MonoBehaviour
     int m_projectileScore;
     [SerializeField]
     Rigidbody2D m_projectileRigidbody;
+    [SerializeField]
+    AudioClip m_moneyCollect;
 
 
     private float m_randomProjectile;
@@ -55,8 +57,9 @@ public class ProjectileBehaviour : MonoBehaviour
         }
         else if (collider.transform.CompareTag("Thela"))
         {         
-            GameEvents.updateScore?.Invoke(m_projectileScore);
+            GameEvents.updateScore?.Invoke(m_projectileScore,collider.transform.position);
             gameObject.GetComponent<Collider2D>().enabled = false;
+            SoundManager.PlaySoundEffect(m_moneyCollect);
             Destroy(this.gameObject);
         }
         else if(collider.transform.CompareTag("Player"))

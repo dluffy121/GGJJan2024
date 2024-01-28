@@ -132,6 +132,7 @@ MonoBehaviour:
   m_throwDirection: {x: 0, y: -1, z: 0}
   m_projectileScore: 200
   m_projectileRigidbody: {fileID: 8275485377225971236}
+  m_moneyCollect: {fileID: 8300000, guid: 7d2dc3c47538bb74da329e22cbebe3cc, type: 3}
 --- !u!61 &7042266307357863972
 BoxCollider2D:
   m_ObjectHideFlags: 0

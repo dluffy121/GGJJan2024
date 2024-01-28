@@ -9,7 +9,7 @@ public class GameEvents : MonoBehaviour
     public static GameEvents Instance => s_instance;
 
 
-    public delegate void UpdateScore(int a_scoreAdd);
+    public delegate void UpdateScore(int a_scoreAdd, Vector3 a_pos);
     public static UpdateScore updateScore;
 
     public delegate void ScoreUpdated(int a_Score);

@@ -21,6 +21,10 @@ public class LevelManager : MonoBehaviour
     GameSceneManager m_gameSceneManagerRefrence;
     [SerializeField]
     AudioClip levelPassSound, levelFailedSound;
+    [SerializeField]
+    AudioClip m_levelfailSirenSound;
+    [SerializeField]
+    GameObject Dollar;
     int m_levelToLoad = 0;
 
     static LevelManager s_instance = null;
@@ -48,9 +52,14 @@ public class LevelManager : MonoBehaviour
         GameEvents.OnDropProjectile += CallbackOnDropProjectile;
     }
 
-    private void CallbackToUpdateScore(int a_addScore)
+    private void CallbackToUpdateScore(int a_addScore, Vector3 a_pos)
     {
         m_setScore += a_addScore;
+        if (a_addScore >= 0)
+        {
+            GameObject l_dollar = Instantiate(Dollar, a_pos, Quaternion.identity);
+            StartCoroutine(DestroyDollar(l_dollar));
+        }
         if (m_setScore >= m_levelScore)
         {
             Debug.Log("!! Level Completed !!");
@@ -61,6 +70,12 @@ public class LevelManager : MonoBehaviour
         GameEvents.OnScoreUpdated?.Invoke(m_setScore);
     }
 
+    IEnumerator DestroyDollar(GameObject l_dollar)
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(l_dollar);
+    }
+
     private void CallbackOnDropProjectile()
     {
         m_livesLeft--;
@@ -68,6 +83,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log(":( Level Failed");
             SoundManager.PlaySoundEffect(levelFailedSound);
+            SoundManager.PlaySoundEffect(m_levelfailSirenSound);
             GamePlayUICanvas.SetLevelFailedPanelVisibility(true);
             GameManager.Instance.PauseTheGame(true);
         }
