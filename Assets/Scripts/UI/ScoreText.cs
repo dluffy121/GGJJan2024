@@ -11,6 +11,8 @@ public class ScoreText : MonoBehaviour
     private Text m_requiredScoreToWin;
     [SerializeField]
     MoneyUIEffect moneyAddUIPrefab;
+    [SerializeField]
+    private RectTransform m_rectTrans;
 
     int m_score;
 
@@ -39,9 +41,9 @@ public class ScoreText : MonoBehaviour
 
     private void CallbackOnScoreUpdated(int a_Score)
     {
-        int l_diffenceInScore = m_score - a_Score;
+        int l_diffenceInScore = a_Score - m_score;
         m_scoreText.text = string.Format("CURRENT MONEY : {0}",a_Score);
-        MoneyUIEffect l_effect = Instantiate<MoneyUIEffect>(moneyAddUIPrefab, transform);
+        MoneyUIEffect l_effect = Instantiate<MoneyUIEffect>(moneyAddUIPrefab, m_rectTrans.position, m_rectTrans.rotation, transform);
         l_effect.StartAnimation(l_diffenceInScore);
     }
 

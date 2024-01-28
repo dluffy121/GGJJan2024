@@ -34,14 +34,14 @@ MonoBehaviour:
     m_probabilityMediumItems: 23
     m_probabilityLargeItems: 7
     m_probabilityObstacles: 15
-  - numberOfLives: 4
+  - numberOfLives: 5
     requiredScoreToWin: 3500
     listOfSpawners: 01000000030000000400000002000000
     m_probabilitySmallItems: 55
     m_probabilityMediumItems: 15
     m_probabilityLargeItems: 5
     m_probabilityObstacles: 25
-  - numberOfLives: 4
+  - numberOfLives: 5
     requiredScoreToWin: 5000
     listOfSpawners: 0300000004000000010000000200000000000000
     m_probabilitySmallItems: 50
