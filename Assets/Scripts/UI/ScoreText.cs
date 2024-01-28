@@ -14,7 +14,7 @@ public class ScoreText : MonoBehaviour
     {
         GameEvents.OnRequiredLevelScoreChanged += CallBackOnRequiredLevelScoreChanged;
         //m_scoreText = gameObject.GetComponent<Text>();
-        m_scoreText.text = string.Format("Score : {0}",0);
+        m_scoreText.text = string.Format("CURRENT MONEY : {0}",0);
     }
 
     private void OnEnable()
@@ -34,11 +34,11 @@ public class ScoreText : MonoBehaviour
 
     private void CallbackOnScoreUpdated(int a_Score)
     {
-        m_scoreText.text = string.Format("Score : {0}",a_Score);
+        m_scoreText.text = string.Format("CURRENT MONEY : {0}",a_Score);
     }
 
     private void CallBackOnRequiredLevelScoreChanged(int a_requiredScore)
     {
-        m_requiredScoreToWin.text = string.Format("Money To Earn : {0}", a_requiredScore);
+        m_requiredScoreToWin.text = string.Format("REQUIRED MONEY : {0}", a_requiredScore);
     }
 }

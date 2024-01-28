@@ -96,10 +96,10 @@ public class DialogWriter : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            ForceWriteTheWholeDialog();
-        }
+        //if(Input.GetKeyDown(KeyCode.Return))
+        //{
+          //  ForceWriteTheWholeDialog();
+        //}
     }
 
     public void LoadGamePlayScene()
