@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 951013335246779255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3389
   m_Sprite: {fileID: 21300000, guid: 3f1c275a19ff4e348b3b5f3c5babf21c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_projectileType: 2
-  m_projectileSpeed: 2
+  m_projectileSpeed: 1
   m_rotationSpeed: 90
   m_throwDirection: {x: 0, y: -1, z: 0}
   m_projectileScore: 500

@@ -14,35 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelsData:
   - numberOfLives: 5
-    requiredScoreToWin: 1500
+    requiredScoreToWin: 1200
     listOfSpawners: 0300000004000000
     m_probabilitySmallItems: 50
     m_probabilityMediumItems: 35
     m_probabilityLargeItems: 10
     m_probabilityObstacles: 5
   - numberOfLives: 5
-    requiredScoreToWin: 5000
+    requiredScoreToWin: 2000
     listOfSpawners: 040000000300000001000000
     m_probabilitySmallItems: 60
     m_probabilityMediumItems: 25
     m_probabilityLargeItems: 5
     m_probabilityObstacles: 10
-  - numberOfLives: 4
-    requiredScoreToWin: 7500
+  - numberOfLives: 5
+    requiredScoreToWin: 2600
     listOfSpawners: 03000000040000000100000000000000
     m_probabilitySmallItems: 55
     m_probabilityMediumItems: 23
     m_probabilityLargeItems: 7
     m_probabilityObstacles: 15
   - numberOfLives: 4
-    requiredScoreToWin: 10000
+    requiredScoreToWin: 3500
     listOfSpawners: 01000000030000000400000002000000
     m_probabilitySmallItems: 55
     m_probabilityMediumItems: 15
     m_probabilityLargeItems: 5
     m_probabilityObstacles: 25
-  - numberOfLives: 3
-    requiredScoreToWin: 15000
+  - numberOfLives: 4
+    requiredScoreToWin: 5000
     listOfSpawners: 0300000004000000010000000200000000000000
     m_probabilitySmallItems: 50
     m_probabilityMediumItems: 15

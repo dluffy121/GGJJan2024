@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2228
   m_Sprite: {fileID: 21300000, guid: ba0580aa31ef5bc4d97be6022ad7c729, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_projectileType: 1
-  m_projectileSpeed: 2
+  m_projectileSpeed: 1.2
   m_rotationSpeed: 90
   m_throwDirection: {x: 0, y: -1, z: 0}
   m_projectileScore: 200
